@@ -20,6 +20,8 @@ class Box extends Component {
             <div>
                 <div className="Box" style={boxStyle}></div>
                 <button onClick={this.handleRemove}>X</button>
+                {/* #v2 When using arrow function to pass a method removeBox() */}
+                {/* <button onClick={this.props.remove}>X</button> */}
             </div>
         )
     }

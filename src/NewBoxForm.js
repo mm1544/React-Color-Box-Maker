@@ -11,7 +11,7 @@ class NewBoxForm extends Component {
     handleSubmit(evt) {
         evt.preventDefault();
         this.props.addBox(this.state);
-        console.log(this.state);
+        // resetting state to an empty string values
         this.setState({color: "", width: "", height: ""});
         
     }
@@ -25,27 +25,36 @@ class NewBoxForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor='color'>Color</label>
-                <input 
-                    id='color'
-                    name='color'
-                    value={this.state.color}
-                    onChange={this.handleChange}
-                />
-                <label htmlFor='width'>Width</label>
-                <input 
-                    id='width'
-                    name='width'
-                    value={this.state.width}
-                    onChange={this.handleChange}
-                />
-                <label htmlFor='height'>Width</label>
-                <input 
-                    id='height'
-                    name='height'
-                    value={this.state.height}
-                    onChange={this.handleChange}
-                />
+                <div>
+                    <label htmlFor='color'>Color</label>
+                    <input 
+                        type='text'
+                        id='color'
+                        name='color'
+                        value={this.state.color}
+                        onChange={this.handleChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor='width'>Width</label>
+                    <input 
+                        type='text'
+                        id='width'
+                        name='width'
+                        value={this.state.width}
+                        onChange={this.handleChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor='height'>Height</label>
+                    <input 
+                        type='text'
+                        id='height'
+                        name='height'
+                        value={this.state.height}
+                        onChange={this.handleChange}
+                    />
+                </div>
                 <button>Add New Box</button>
             </form>
         )
